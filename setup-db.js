@@ -13,23 +13,17 @@ module.exports = config => {
     env: 'dev'
   })
 
-  const { username, password, host, env, database } = config
+  const { uri = 'mongodb://localhost', env, database } = config
 
-  let uri = `mongodb://${host}/${database}`
   const opt = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false,
-    // serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds
-    // socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
-    // family: 4 // Use IPv4, skip trying IPv6
-  }
-
-  if (env === 'test') {
-    uri = `mongodb://${host}/eaitest`
-  } else if (env === 'prod') {
-    uri = `mongodb://${username}:${password}@${host}/${database}`
+    serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds
+    socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
+    family: 4, // Use IPv4, skip trying IPv6
+    dbName: database
   }
 
   let mongoServer
@@ -51,7 +45,7 @@ module.exports = config => {
     } catch (error) {
       const errorMenssage = {
         status: 500,
-        menssage: 'Error de conexión con la base de datos',
+        menssage: 'Error de conexi�n con la base de datos',
         error
       }
       throw errorMenssage
