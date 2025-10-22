@@ -1,0 +1,35 @@
+{
+  "name": "db",
+  "version": "1.0.0",
+  "description": "Base de Datos del CRM Escuela Americana de Innovación",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://julio_giampiere_grados@bitbucket.org/devcodela/db.git"
+  },
+  "author": "Julio Grados",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/devcodela/db#readme",
+  "dependencies": {
+    "defaults": "^1.0.3",
+    "moment-timezone": "^0.5.27",
+    "mongoose": "^5.8.9",
+    "mongoose-beautiful-unique-validation": "^7.1.1",
+    "mongoose-timestamp": "^0.6.0",
+    "utils": "file:../utils"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^6.3.3",
+    "standard": "^14.3.1"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "bugs": {
+    "url": "https://bitbucket.org/devcodela/db/issues"
+  }
+}
