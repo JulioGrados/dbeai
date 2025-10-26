@@ -21,7 +21,7 @@ module.exports = config => {
     env: 'dev'
   })
   
-  const { uri = `mongodb://${host}`, env, database } = config
+  const { uri = `mongodb://localhost:27017`, env, database } = config
   console.log('uri', uri)
   const opt = {
     useNewUrlParser: true,
