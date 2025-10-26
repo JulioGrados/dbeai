@@ -21,7 +21,7 @@ module.exports = config => {
     env: 'dev'
   })
   
-  const { uri = `mongodb://localhost:27017`, env, database } = config
+  const { uri = `mongodb://${host}`, env, database } = config
   console.log('uri', uri)
   const opt = {
     useNewUrlParser: true,
@@ -52,7 +52,7 @@ module.exports = config => {
         return db
       }
       console.log('2')
-      db = await mongoose.connect(uri, opt)
+      db = await mongoose.connect('mongodb://localhost:27017', opt)
     } catch (error) {
       const errorMenssage = {
         status: 500,
