@@ -39,6 +39,14 @@ const ExamSchema = new Schema(
         ref: 'Course'
       }
     },
+    versions: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'ExamVersion'
+    }],
+    favoriteVersion: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'ExamVersion'
+    },
     date: {
       type: Date,
       default: Date.now

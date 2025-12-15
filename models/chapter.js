@@ -49,6 +49,14 @@ const ChapterSchema = new Schema(
     published: {
       type: Date,
       default: Date.now
+    },
+    versions: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'ChapterVersion'
+    }],
+    favoriteVersion: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'ChapterVersion'
     }
   },
   {

@@ -11,6 +11,17 @@ const CourseSchema = new Schema(
       type: String,
       required: [true, 'El curso debe tener nombre.']
     },
+    subject: {
+      type: String
+    },
+    language: {
+      type: String,
+      default: 'Spanish'
+    },
+    academicLevel: {
+      type: String,
+      default: 'Formación continua'
+    },
     slug: {
       type: String,
       required: [true, 'El curso debe tener un slug.'],
@@ -248,6 +259,19 @@ const CourseSchema = new Schema(
     ],
     points: {
       type: Number
+    },
+    status: {
+      type: String,
+      enum: ['draft', 'generating', 'completed', 'error'],
+      default: 'draft'
+    },
+    generationProgress: {
+      current: { type: Number, default: 0 },
+      total: { type: Number, default: 0 }
+    },
+    format: {
+      type: String,
+      default: 'moodle'
     }
   },
   {

@@ -31,6 +31,11 @@ const QuestionSchema = new Schema(
       type: Boolean,
       default: false
     },
+    options: [{
+      id: String,
+      text: String,
+      isCorrect: Boolean
+    }],
     date: {
       type: Date,
       default: Date.now
