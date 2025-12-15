@@ -19,9 +19,9 @@ const ChapterVersionSchema = new Schema(
       ref: 'Lesson'
     },
     chapter: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Chapter',
-        required: true
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Chapter',
+      required: true
     },
     versionNumber: {
         type: Number,
