@@ -27,7 +27,7 @@ module.exports = config => {
   let mongoServer
 
   const connect = async (envParam) => {
-    console.log('connect ')
+    console.log('connect')
     if (db) {
       return db
     }
