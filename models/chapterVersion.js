@@ -46,7 +46,17 @@ const ChapterVersionSchema = new Schema(
     isFavorite: {
         type: Boolean,
         default: false
-    }
+    },
+    edits: [{
+      editPrompt: {
+        type: String,
+        required: true
+      },
+      timestamp: {
+        type: Date,
+        default: Date.now
+      }
+    }]
   },
   {
     collection: 'chapterversions'
