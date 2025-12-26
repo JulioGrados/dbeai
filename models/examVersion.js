@@ -22,6 +22,11 @@ const ExamVersionSchema = new Schema(
         text: String,
         isCorrect: Boolean
     }],
+    exam: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Exam',
+      required: true
+    },
     versionNumber: {
         type: Number,
         required: true
