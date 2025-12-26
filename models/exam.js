@@ -17,6 +17,11 @@ const ExamSchema = new Schema(
         ref: 'Question'
       }
     ],
+    options: [{
+      id: String,
+      text: String,
+      isCorrect: Boolean
+    }],
     number: {
       type: Number
     },

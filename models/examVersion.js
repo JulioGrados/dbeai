@@ -17,6 +17,11 @@ const ExamVersionSchema = new Schema(
             ref: 'Question'
         }
     ],
+    options: [{
+        id: String,
+        text: String,
+        isCorrect: Boolean
+    }],
     versionNumber: {
         type: Number,
         required: true
