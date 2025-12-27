@@ -55,6 +55,16 @@ const ExamVersionSchema = new Schema(
         type: Boolean,
         default: false
     },
+    edits: [{
+      editPrompt: {
+        type: String,
+        required: true
+      },
+      timestamp: {
+        type: Date,
+        default: Date.now
+      }
+    }],
     date: {
       type: Date,
       default: Date.now
