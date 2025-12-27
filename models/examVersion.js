@@ -18,6 +18,7 @@ const ExamVersionSchema = new Schema(
         }
     ],
     options: [{
+        question: String,
         id: String,
         text: String,
         isCorrect: Boolean
@@ -34,6 +35,9 @@ const ExamVersionSchema = new Schema(
     prompt: {
         type: String,
         required: true
+    },
+    content: {
+        type: String
     },
     lesson: {
         type: Schema.Types.ObjectId,
