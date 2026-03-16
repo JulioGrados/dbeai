@@ -11,16 +11,19 @@ const BlogSchema = new Schema(
       ref: 'User'
     },
     title: {
-      type: String
+      type: String,
+      required: [true, 'Debes agregar un título para el blog.']
     },
     subject: {
       type: String
     },
     content: {
-      type: String
+      type: String,
+      required: [true, 'Debes agregar el contenido del blog.']
     },
     description: {
-      type: String
+      type: String,
+      required: [true, 'Debes agregar una descripción para el blog.']
     },
     date: {
       type: Date,
@@ -28,6 +31,11 @@ const BlogSchema = new Schema(
     },
     image: {
       type: String
+    },
+    status: {
+      type: String,
+      enum: ['Borrador', 'Publicado', 'Archivado'],
+      default: 'Borrador'
     }
   },
   {
